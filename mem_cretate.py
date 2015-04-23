@@ -5,11 +5,12 @@ import time
 
 class CreateMemGraph:
 
-	def create(self,rrdPath,step,start):
+	def create(self,rrdPath):
 		if os.path.exists(rrdPath):
 			return
 		else:
-			rrd=rrdtool.create(rrdPath,'--step',step,'--start',start,
+			now=str(int(time.time()))
+			rrd=rrdtool.create(rrdPath,'--step','60','--start',now,
 			'DS:eden_space:GAUGE:600:0:U',
 			'DS:survivor_space:GAUGE:600:0:U',
 			'DS:tenured_gen:GAUGE:600:0:U',
@@ -22,12 +23,6 @@ class CreateMemGraph:
 			if rrd:
 				print rrdtool.error()
 
-cur_time=str(int(time.time()))
+
 createGraph = CreateMemGraph()
-createGraph.create('/home/brian/dev/python/tomcat/mem.rrd',60,cur_time)
-
-
-
-
-
-
+createGraph.create('/home/brian/dev/python/tomcat/mem.rrd')
