@@ -30,7 +30,3 @@ class MemGraph:
 		"GPRINT:code_cache:MAX:Code Cache\: %6.4lf %Sbyte",
 		"COMMENT:  ",
 		"GPRINT:perm_gen:MAX:Perm Gen\: %6.4lf %Sbyte")
-
-
-memGraph = MemGraph()
-memGraph.graph('localhost','/home/brian/dev/python/tomcat/mem.rrd','/home/brian/dev/python/tomcat/mem.png')
