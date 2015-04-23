@@ -21,6 +21,3 @@ class MemUpdate:
 		update=rrdtool.updatev(rrdPath,'%s:%s:%s:%s:%s:%s' % 
 			(str(now),str(eden_space),str(survivor_sapce),str(old_gen),str(code_cache),str(perm_gen)))
 		print update
-
-memUpdate = MemUpdate()
-memUpdate.update('localhost','8080','/home/brian/dev/python/tomcat/mem.rrd')
