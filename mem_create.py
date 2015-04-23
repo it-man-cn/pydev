@@ -22,7 +22,3 @@ class CreateMemGraph:
 			'RRA:MAX:0.5:5:2016')	
 			if rrd:
 				print rrdtool.error()
-
-
-createGraph = CreateMemGraph()
-createGraph.create('/home/brian/dev/python/tomcat/mem.rrd')
