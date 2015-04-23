@@ -14,7 +14,7 @@ class MemGraph:
 		"DEF:connectionCount="+rrdPath+":connectionCount:AVERAGE",
 		"LINE1:currentThreadsBusy#FF0000:currentThreadsBusy",
 		"LINE1:currentThreadCount#0000FF:currentThreadCount",
-		"LINE1:connectionCount#FF00FF:connectionCount",
+		"LINE1:connectionCount#00FF00:connectionCount",
 		"COMMENT:\\r",
 		"COMMENT:\\r",
 		"GPRINT:maxThreads:MAX:maxThreads\: %6.0lf %S",
