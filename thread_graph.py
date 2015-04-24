@@ -5,7 +5,7 @@ import time
 class MemGraph:
 
 	def graph(self,host,rrdPath,picPath):
-		title = 'Tomcat '+host+' mem usage ('+time.strftime('%Y-%m-%d',time.localtime(time.time()))+')'
+		title = 'Tomcat '+host+' thread count ('+time.strftime('%Y-%m-%d',time.localtime(time.time()))+')'
 		rrdtool.graph(picPath,'--start','-1d','--vertical-label=byte','--x-grid','MINUTE:12:HOUR:1:HOUR:1:0:%H',\
 		'--width','650','--height','230','--title',title,
 		"DEF:maxThreads="+rrdPath+":maxThreads:AVERAGE",
